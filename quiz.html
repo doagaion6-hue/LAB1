@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Spațial</title>
+</head>
+
+<body text="white" background="images/5471985.jpg"
+style="background-size: cover; background-position: center; position: relative;">
+
+  <script>
+function verificaQuiz() {
+
+    let scor = 0;
+    let rezultat = "";
+
+    // Răspunsuri corecte:
+    // q1 = Jupiter
+    // q2 = Neil Armstrong
+    // q3 = Marte
+    // q4 = O mulțime de stele...
+    // q5 = Calea Lactee
+
+    let q1 = document.querySelector('input[name="q1"]:checked');
+    let q2 = document.querySelector('input[name="q2"]:checked');
+    let q3 = document.querySelector('input[name="q3"]:checked');
+    let q4 = document.querySelector('input[name="q4"]:checked');
+    let q5 = document.querySelector('input[name="q5"]:checked');
+
+    if (q1 && q1.value == "Jupiter") { scor++; rezultat += "1. Corect ✅<br>"; }
+    else { rezultat += "1. Greșit ❌ (Răspuns corect: Jupiter)<br>"; }
+
+    if (q2 && q2.value == "Neil Armstrong") { scor++; rezultat += "2. Corect ✅<br>"; }
+    else { rezultat += "2. Greșit ❌ (Răspuns corect: Neil Armstrong)<br>"; }
+
+    if (q3 && q3.value == "Marte") { scor++; rezultat += "3. Corect ✅<br>"; }
+    else { rezultat += "3. Greșit ❌ (Răspuns corect: Marte)<br>"; }
+
+    if (q4 && q4.value == "galaxie") { scor++; rezultat += "4. Corect ✅<br>"; }
+    else { rezultat += "4. Greșit ❌ (Răspuns corect: O mulțime de stele, gaz și praf)<br>"; }
+
+    if (q5 && q5.value == "Calea Lactee") { scor++; rezultat += "5. Corect ✅<br>"; }
+    else { rezultat += "5. Greșit ❌ (Răspuns corect: Calea Lactee)<br>"; }
+
+    document.getElementById("rezultat").innerHTML =
+        "<h2>Rezultat final: " + scor + " / 5</h2><br>" + rezultat;
+
+    return false;
+}
+</script>
+
+</head>
+
+<body text="white"
+background="images/universe-background-cartoon-space-planets-cosmos_887552-24931.avif">
+
+<center>
+<h1>Quiz despre Spațiu</h1>
+<hr>
+
+<form onsubmit="return verificaQuiz();">
+
+<h3>1. Care este cea mai mare planetă?</h3>
+<input type="radio" name="q1" value="Saturn"> Saturn<br>
+<input type="radio" name="q1" value="Jupiter"> Jupiter<br>
+<input type="radio" name="q1" value="Neptun"> Neptun<br>
+<input type="radio" name="q1" value="Marte"> Marte<br>
+
+<br>
+
+<h3>2. Cine a ajuns primul pe Lună?</h3>
+<input type="radio" name="q2" value="Yuri Gagarin"> Yuri Gagarin<br>
+<input type="radio" name="q2" value="Neil Armstrong"> Neil Armstrong<br>
+<input type="radio" name="q2" value="Buzz Aldrin"> Buzz Aldrin<br>
+
+<br>
+
+<h3>3. Cum se numește planeta roșie?</h3>
+<input type="radio" name="q3" value="Venus"> Venus<br>
+<input type="radio" name="q3" value="Marte"> Marte<br>
+<input type="radio" name="q3" value="Mercur"> Mercur<br>
+
+<br>
+
+<h3>4. Ce este o galaxie?</h3>
+<input type="radio" name="q4" value="stea"> O stea foarte mare<br>
+<input type="radio" name="q4" value="galaxie"> O mulțime de stele, gaz și praf<br>
+<input type="radio" name="q4" value="asteroid"> Un asteroid uriaș<br>
+
+<br>
+
+<h3>5. Cum se numește galaxia noastră?</h3>
+<input type="radio" name="q5" value="Andromeda"> Andromeda<br>
+<input type="radio" name="q5" value="Calea Lactee"> Calea Lactee<br>
+<input type="radio" name="q5" value="Triangulum"> Triangulum<br>
+
+<br><br>
+
+<input type="submit" value="Verifică răspunsurile">
+<input type="reset" value="Resetează">
+
+</form>
+
+<hr>
+
+<div id="rezultat"></div>
+
+</center>
+</body>
+</html>
